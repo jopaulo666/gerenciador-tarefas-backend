@@ -1,5 +1,7 @@
 package br.com.jopaulo.tarefas;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -13,9 +15,11 @@ import br.com.jopaulo.tarefas.domain.task.Task;
 
 @SpringBootApplication
 public class GerenciadorTarefasBackendApplication implements RepositoryRestConfigurer{
+	private static final Logger logger = LoggerFactory.getLogger(GerenciadorTarefasBackendApplication.class);
 
 	public static void main(String[] args) {
 		SpringApplication.run(GerenciadorTarefasBackendApplication.class, args);
+		logger.info("Gerenciador de Tarefas está pronto para usar!");
 	}
 	
 	@Override
@@ -34,5 +38,7 @@ public class GerenciadorTarefasBackendApplication implements RepositoryRestConfi
 		Validator validator = validator();
 		validatingListener.addValidator("beforeCreate", validator);
 		validatingListener.addValidator("beforeSave", validator);
+		
+		logger.info("Configuração de validação... OK!");
 	}
 }
