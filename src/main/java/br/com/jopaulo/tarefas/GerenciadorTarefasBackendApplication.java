@@ -25,6 +25,11 @@ public class GerenciadorTarefasBackendApplication implements RepositoryRestConfi
 	@Override
 	public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
 		config.exposeIdsFor(Task.class);
+		config.getCorsRegistry()
+			.addMapping("/**")
+			.allowedOrigins("*")
+			.allowedMethods("GET", "POST", "PUT", "DELET");
+		logger.info("Repository CORS setup... OK!");
 	}
 
 	@Bean
