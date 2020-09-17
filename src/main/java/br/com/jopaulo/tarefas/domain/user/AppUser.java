@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "app_user")
@@ -13,10 +14,13 @@ public class AppUser {
 	@GeneratedValue
 	private Integer id;
 	
+	@NotEmpty(message = "Nome de usuário é obrigatório")
 	private String username;
 	
+	@NotEmpty(message = "Senha é obrigatória")
 	private String password;
 	
+	@NotEmpty(message = "Nome de exibição é obrigatório")
 	private String displayName;
 	
 	public AppUser() {		
