@@ -26,4 +26,10 @@ public class ResteResponseError {
 		responseError.error = builder.toString();
 		return responseError;
 	}
+	
+	public static ResteResponseError fromMessage(String message) {
+		ResteResponseError responseError = new ResteResponseError();
+		responseError.error = message;
+		return responseError;
+	}
 }

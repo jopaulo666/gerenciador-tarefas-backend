@@ -27,14 +27,14 @@ public class Task {
 	private String description;
 	
 	@NotNull(message = "Data da tarefa é obrigatória")
-	@FutureOrPresent(message = "Data da tarefa não deve estar em data passada")
+	@FutureOrPresent(message = "A data da tarefa não deve ser uma data passada")
 	private LocalDate  whenToDo;
 	
 	private Boolean done = false;
 	
 	@ManyToOne
 	@JoinColumn(name = "app_user_id")
-	@NotNull(message = "Usuário da tarefa é obrigatória")
+//	@NotNull(message = "Usuário da tarefa é obrigatória")
 	private AppUser appUser;
 	
 	public Task() {
