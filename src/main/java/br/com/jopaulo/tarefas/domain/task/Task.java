@@ -9,12 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import br.com.jopaulo.tarefas.domain.user.AppUser;
-import lombok.Getter;
-import lombok.Setter;
 
 @Entity
-@Getter
-@Setter
 public class Task {
 
 	@Id
@@ -33,13 +29,51 @@ public class Task {
 	
 	public Task() {
 	}
-
+	
 	public Task(String description, LocalDate whenToDo, Boolean done) {
-		super();
 		this.description = description;
 		this.whenToDo = whenToDo;
 		this.done = done;
+	}	
+
+	public Integer getId() {
+		return id;
 	}
 
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public LocalDate getWhenToDo() {
+		return whenToDo;
+	}
+
+	public void setWhenToDo(LocalDate whenToDo) {
+		this.whenToDo = whenToDo;
+	}
+
+	public Boolean getDone() {
+		return done;
+	}
+
+	public void setDone(Boolean done) {
+		this.done = done;
+	}
+
+	public AppUser getAppUser() {
+		return appUser;
+	}
+
+	public void setAppUser(AppUser appUser) {
+		this.appUser = appUser;
+	}
 	
 }
