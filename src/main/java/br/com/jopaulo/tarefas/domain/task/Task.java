@@ -23,7 +23,7 @@ public class Task {
 	private Integer id;
 	
 	@NotEmpty(message = "Descrição é obrigatória")
-	@Length(min = 3, max = 40, message = "Tamanho da tarefa inválido")
+	@Length(min = 3, max = 100, message = "Tamanho da tarefa inválido")
 	private String description;
 	
 	@NotNull(message = "Data da tarefa é obrigatória")
