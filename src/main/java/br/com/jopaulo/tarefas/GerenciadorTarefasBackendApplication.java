@@ -28,7 +28,7 @@ public class GerenciadorTarefasBackendApplication implements RepositoryRestConfi
 		config.getCorsRegistry()
 			.addMapping("/**")
 			.allowedOrigins("*")
-			.allowedMethods("GET", "POST", "PUT", "DELET");
+			.allowedMethods("GET", "POST", "PUT", "DELETE");
 		logger.info("Repository CORS setup... OK!");
 	}
 

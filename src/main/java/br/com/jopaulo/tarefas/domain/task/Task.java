@@ -14,6 +14,8 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import br.com.jopaulo.tarefas.domain.user.AppUser;
 
 @Entity
@@ -36,6 +38,7 @@ public class Task {
 	
 	@ManyToOne
 	@JoinColumn(name = "app_user_id")
+	@JsonIgnore
 //	@NotNull(message = "Usuário da tarefa é obrigatória")
 	private AppUser appUser;
 	
